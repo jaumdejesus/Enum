@@ -1,26 +1,27 @@
-﻿using System;
-using System.Security.Cryptography.X509Certificates;
+
+using System;
 using cores;
 
-public class Carro
+namespace Carros
 {
-	public string? Modelo { get; set; }
-	public string? Marca { get; set; }
-	public int Ano { get; set; }
-	public int Cor {  get; set; }
+    public class Carro
+    {
+        public string? Marca {  get; set; }
+        public string? Modelo { get; set; }
+        public int Ano { get; set; }
+        public string Cor {  get; set; }
 
-	public Carro(string? modelo, string? marca, int ano, int cor)
-	{
-		Modelo = modelo;
-		Marca = marca;
-		Ano = ano;
-		Cor = cor;
+        public Carro(string? marca, string? modelo, int ano, Cores cor)
+        {
+            Marca = marca;
+            Modelo = modelo;
+            Ano = ano;
+            Cor = cor.ToString();
+        }
 
-		Console.WriteLine();
-	}
-
-	public void ExibirInfo(string? modelo, string? marca, int ano, int cor)
-	{
-		Console.WriteLine($"Informações do seu carro: Modelo{modelo}, Marca:{marca}, Ano: {ano}, Cor: {cor}");
-	}
+        public void ExibirInfo()
+        {            
+            Console.WriteLine($"Marca: {Marca}, Modelo: {Modelo}, Ano: {Ano}, Cor: {Cor}");
+        }
+    }
 }
